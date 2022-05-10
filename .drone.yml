@@ -4,17 +4,29 @@ name: Testing Python CI/CD
 
 
 steps:
-- name: Install and deploy
-  image: python
+- name: Black Code Format Check
+  image: magic9669/network_cicd
+  commands:
+  - black . --check
+
+- name: Precheck OSPF and BGP
+  image: magic9669/network_cicd
+  commands:
+  - pytest test.py --disable-pytest-warnings -s
+
+- name: Deploy Configurations
+  image: magic9669/network_cicd
   environment:
-    Test_Secret:
+    MY_PASS:
       from_secret: cisco
   commands:
-  - pip3 install -r requirements.txt
-  - python3 bat.py
+  - python build.py
+  when:
+    branch:
+    - master
+    - main
 
 trigger:
-  branch:
+  event:
     exclude:
-    - main
-    - master
+    - pull_request
