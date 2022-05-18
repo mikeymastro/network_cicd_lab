@@ -8,6 +8,11 @@ steps:
   commands:
   - black . --check
 
+- name: Batfish Pre-Checks
+  image: magic9669/network_cicd
+  commands:
+  - python3 batfishcheck.py
+
 - name: Check IP Interfaces
   image: magic9669/network_cicd
   environment:
