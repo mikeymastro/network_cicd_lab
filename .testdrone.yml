@@ -13,6 +13,14 @@ steps:
   commands:
   - python3 batfishcheck.py
 
+- name: Precheck Configuration Diff
+  image: magic9669/network_cicd
+  environment:
+    MY_SECRET:
+      from_secret: MY_SECRET
+  commands:
+  - python build.py --dry_run
+
 - name: Check IP Interfaces
   image: magic9669/network_cicd
   environment:
