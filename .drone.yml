@@ -18,7 +18,7 @@ steps:
   image: magic9669/network_cicd
   environment:
     MY_PASS:
-      from_secret: cisco
+      from_secret: test
   commands:
   - python build.py
   when:
