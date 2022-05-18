@@ -7,7 +7,7 @@ steps:
   image: magic9669/network_cicd
   commands:
   - black . --check
-steps:
+
 - name: Check IP Interfaces
   image: magic9669/network_cicd
   environment:
