@@ -1,6 +1,4 @@
-Current configuration : 7611 bytes
-!
-! Last configuration change at 15:22:50 UTC Wed May 18 2022
+! Last configuration change at 18:48:29 UTC Wed May 18 2022
 !
 version 16.6
 no service timestamps debug uptime
@@ -253,6 +251,11 @@ interface GigabitEthernet4
  negotiation auto
  no mop enabled
  no mop sysid
+!
+router ospf 1
+ router-id 1.1.1.1
+ network 150.1.0.0 0.0.255.255 area 0
+ network 155.1.0.0 0.0.255.255 area 0
 !
 !
 virtual-service csr_mgmt
