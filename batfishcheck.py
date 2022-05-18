@@ -23,6 +23,7 @@ def test_duplicate_rtr_ids(snap):
     assert_no_duplicate_router_ids(
         snapshot=snap,
         protocols={"ospf", "bgp"},
+        soft=True,
     )
     console.print(
         ":green_heart: [bold green]No duplicate router IDs found[/bold green] :green_heart:"
