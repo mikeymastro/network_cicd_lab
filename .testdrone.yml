@@ -5,7 +5,7 @@ name: Testing Python CI/CD
 
 steps:
 - name: Check IP Interfaces
-  image: magic9669/netauto
+  image: magic9669/network_cicd
   environment:
     PASSWORD:
       from_secret: PASSWORD
