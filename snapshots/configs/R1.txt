@@ -253,7 +253,7 @@ interface GigabitEthernet4
  no mop sysid
 !
 router ospf 1
- router-id 2.2.2.2
+ router-id 1.1.1.1
  network 150.1.0.0 0.0.255.255 area 0
  network 155.1.0.0 0.0.255.255 area 0
 !

@@ -18,7 +18,7 @@ console = Console(color_system="truecolor")
 def test_duplicate_rtr_ids(snap):
     """Testing for duplicate router IDs"""
     console.print(
-        ":white_exclamation_mark: [bold yellow]Testing for duplicate router IDs[/bold yellow] :white_exclamation_mark:"
+        ":red_exclamation_mark: [bold yellow]Testing for duplicate router IDs[/bold yellow] :red_exclamation_mark:"
     )
     assert_no_duplicate_router_ids(
         snapshot=snap,
