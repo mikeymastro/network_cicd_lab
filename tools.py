@@ -2,6 +2,7 @@
 
 import os
 
+
 def nornir_set_creds(norn, username="test", password=None):
     """
     Handler so credentials are not stored in cleartext.
