@@ -1,0 +1,277 @@
+Current configuration : 7139 bytes
+!
+! Last configuration change at 15:14:00 UTC Wed May 18 2022
+!
+version 16.6
+no service timestamps debug uptime
+no service timestamps log uptime
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
+!
+!
+!
+!
+!
+!
+!
+no ip domain lookup
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+ipv6 unicast-routing
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3875980529
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3875980529
+ revocation-check none
+ rsakeypair TP-self-signed-3875980529
+!
+crypto pki trustpoint SLA-TrustPoint
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-3875980529
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33383735 39383035 3239301E 170D3232 30323037 30383132
+  34335A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 38373539
+  38303532 39308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201
+  0A028201 0100995B AAD910C9 77533030 B90A3D2F 41781137 769CCAF1 5EFF8063
+  2D209003 892C5BEB 2ECD1613 3CCDD1CA AED17E74 E3BA43D7 A35ADD94 488961E3
+  A97B0DFD 6B063B77 B485AB79 FA591422 6FB4B5D5 C99DBA43 F1DBA8E0 B1DB165C
+  D10952B4 217CAE86 EE0508FF E9E7E27A 03B08CF9 DACB0DA6 6DCB11F6 E60EA524
+  938DF167 4EB528C7 0F792474 BAAE8616 690BC1F4 EB792EB3 83F15BE1 923AF4EE
+  7849D488 6FD818E0 51695F01 B85F2BD3 EF095AE1 73EBEE24 54A28FE1 3C5D9104
+  BA28DAB6 971252A6 37BC5E3A 7D3027C6 D6638E5A 3EC95259 C7C86710 7E4377DF
+  4357433F B4F20DF7 7A24FFC1 662BFC83 4A61AEB6 F3B1019D CB3B6582 CC25D48D
+  73EA1B3F 75950203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF
+  301F0603 551D2304 18301680 142AB12B 614CC297 9E90A90B 05D0F2D7 037E8150
+  D1301D06 03551D0E 04160414 2AB12B61 4CC2979E 90A90B05 D0F2D703 7E8150D1
+  300D0609 2A864886 F70D0101 05050003 82010100 27D1321E 9A9BBF42 D0E5D724
+  28A34C64 39896CDE B590CE01 33CF900A 3B3D9668 A01A597E 3F9AB74C 04536EA9
+  B46170C8 B252D340 F59B6AB8 10E06243 8BA5FCBD F97FC9CE 6810A997 4A4BCA2F
+  C0508DE7 FC13EFCD 666C8128 477EC866 E73DBAC4 56F11C76 ACF76654 FEC49C2A
+  6D577096 3660A6E5 36EB5122 6B064F45 B34E33C3 FD33F781 CC64F2A2 2B0B7893
+  CDDCA7E5 75BAEA9C 73878AB6 8E6D0DF6 034ACC68 17B8548E 0D5E2985 61B74C59
+  8DDE1C86 44AC0582 BD21E6DE 0FA5450B 9CA5E1F8 90536995 C463E195 BFB158F9
+  9E4DAABD 8A2FFAD3 953C949B BD9C08BD 01854DAC 62CBC801 DC81E9CC 36594040
+  8F5D78B2 D208667A 8EF46DFB 1C1F2C94 09264D87
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9ERXWIGH7VB
+diagnostic bootup level minimal
+spanning-tree extend system-id
+memory free low-watermark processor 72107
+!
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+cdp run
+!
+!
+!
+!
+!
+!
+!
+crypto isakmp policy 10
+ encr aes
+ hash md5
+ authentication pre-share
+ group 5
+crypto isakmp key cisco address 0.0.0.0
+!
+!
+crypto ipsec transform-set ESP_AES_SHA esp-aes esp-sha-hmac
+ mode tunnel
+!
+crypto ipsec profile DMVPN_PROFILE
+ set transform-set ESP_AES_SHA
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 150.1.2.2 255.255.255.255
+ ipv6 address 2001:150:2:2::2/128
+!
+interface Tunnel0
+ ip address 155.1.0.2 255.255.255.0
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication NHRPPASS
+ ip nhrp map 155.1.0.5 169.254.100.5
+ ip nhrp map multicast 169.254.100.5
+ ip nhrp network-id 1
+ ip nhrp holdtime 300
+ ip nhrp nhs 155.1.0.5
+ ip tcp adjust-mss 1360
+ tunnel source GigabitEthernet1.100
+ tunnel mode gre multipoint
+ tunnel key 150
+ tunnel protection ipsec profile DMVPN_PROFILE
+!
+interface GigabitEthernet1
+ no ip address
+ negotiation auto
+ cdp enable
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet1.23
+ encapsulation dot1Q 23
+ ip address 155.1.23.2 255.255.255.0
+ ipv6 address 2001:155:1:23::2/64
+!
+interface GigabitEthernet1.100
+ encapsulation dot1Q 100
+ ip address 169.254.100.2 255.255.255.0
+ ipv6 address 2001:169:254:100::2/64
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ ip address 192.168.69.202 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ privilege level 15
+ no login
+!
+!
+!
+!
+!
+!
+end
