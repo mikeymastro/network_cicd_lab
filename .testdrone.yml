@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: Testing Python CI/CD
+
+
+steps:
+- name: Check IP Interfaces
+  image: python
+  environment:
+    PASSWORD:
+      from_secret: PASSWORD
+    USER:
+      from_secret: USER
+  commands:
+  - pip3 install -r requirements.txt
+  - python3 checkip.py
