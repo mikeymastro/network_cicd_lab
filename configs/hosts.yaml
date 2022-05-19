@@ -1,15 +1,15 @@
 ---
-R1:
-  hostname: 192.168.69.201
+SW1:
+  hostname: 192.168.69.31
   groups:
-    - ios
+    - eos
 
-R2:
-  hostname: 192.168.69.202
+SW2:
+  hostname: 192.168.69.32
   groups:
-    - ios
+    - eos
 
-R3:
-  hostname: 192.168.69.203
+SW3:
+  hostname: 192.168.69.33
   groups:
-    - ios
+    - eos

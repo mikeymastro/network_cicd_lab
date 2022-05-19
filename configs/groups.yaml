@@ -1,3 +1,5 @@
 ---
+eos:
+  platform: eos
 ios:
   platform: ios

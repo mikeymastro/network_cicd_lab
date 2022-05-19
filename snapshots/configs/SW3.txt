@@ -1,0 +1,39 @@
+! Command: show running-config
+ ! device: SW3 (vEOS-lab, EOS-4.26.6M)
+!
+! boot system flash:/vEOS-lab.swi
+!
+no aaa root
+!
+username michael privilege 15 secret sha512 $6$AetzFKX4fLw2VqXL$kmu/t7Xa0paz4ZL/nHm.HGDHgcsKjKBGtEUeQGoJoKgt60dg0SlgEbBx01B1BHmc.
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model ribd
+!
+hostname SW3
+!
+spanning-tree mode mstp
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Ethernet4
+!
+interface Ethernet5
+!
+interface Ethernet6
+!
+interface Ethernet7
+!
+interface Ethernet8
+!
+interface Management1
+   ip address 192.168.69.33/24
+!
+ip routing
+!
+end
