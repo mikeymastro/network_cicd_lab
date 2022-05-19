@@ -16,16 +16,12 @@ steps:
 - name: Precheck Configuration Diff
   image: magic9669/network_cicd
   environment:
-    TESTPASS:
-      from_secret: TESTPASS
-    TESTUSER:
-      from_secret: TESTUSER
+    PASSWORD:
+      from_secret: PASSWORD
+    USER:
+      from_secret: USER
   commands:
   - python build.py --dry_run
-  when:
-    branch:
-    - master
-    - main
 
 - name: Check IP Interfaces
   image: magic9669/network_cicd
