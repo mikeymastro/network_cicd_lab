@@ -4,12 +4,7 @@ SW1:
   groups:
     - eos
 
-SW2:
-  hostname: 192.168.69.32
+R1:
+  hostname: 192.168.69.201
   groups:
-    - eos
-
-SW3:
-  hostname: 192.168.69.33
-  groups:
-    - eos
+    - ios
