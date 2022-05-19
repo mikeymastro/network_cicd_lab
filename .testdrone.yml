@@ -17,9 +17,9 @@ steps:
   image: magic9669/network_cicd
   environment:
     PASSWORD:
-      from_secret: PASSWORD
+      from_secret: TESTPASS
     USER:
-      from_secret: USER
+      from_secret: TESTUSER
   commands:
   - python build.py --dry_run
   when:
