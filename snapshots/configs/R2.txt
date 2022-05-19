@@ -188,6 +188,7 @@ interface Loopback0
  ipv6 address 2001:150:2:2::2/128
 !
 interface Tunnel0
+ description DMVPN Tunnel to R5
  ip address 155.1.0.2 255.255.255.0
  no ip redirects
  ip mtu 1400
@@ -211,6 +212,7 @@ interface GigabitEthernet1
  no mop sysid
 !
 interface GigabitEthernet1.23
+ description P2P to R3
  encapsulation dot1Q 23
  ip address 155.1.23.2 255.255.255.0
  ipv6 address 2001:155:1:23::2/64
