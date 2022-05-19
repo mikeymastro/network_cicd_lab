@@ -16,9 +16,9 @@ steps:
 - name: Precheck Configuration Diff
   image: magic9669/network_cicd
   environment:
-    PASSWORD:
+    password:
       from_secret: PASSWORD
-    USER:
+    username:
       from_secret: USER
   commands:
   - python build.py --dry_run

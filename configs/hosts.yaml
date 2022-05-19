@@ -3,8 +3,3 @@ SW1:
   hostname: 192.168.69.31
   groups:
     - eos
-
-R1:
-  hostname: 192.168.69.201
-  groups:
-    - ios
