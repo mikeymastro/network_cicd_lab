@@ -1,6 +1,8 @@
-Current configuration : 7496 bytes
+Building configuration...
+
+Current configuration : 7611 bytes
 !
-! Last configuration change at 18:49:43 UTC Wed May 18 2022
+! Last configuration change at 17:33:18 UTC Fri May 20 2022
 !
 version 16.6
 no service timestamps debug uptime
@@ -34,6 +36,7 @@ call-home
 !
 !
 no ip domain lookup
+ip domain name mastro.net
 !
 !
 !
@@ -144,6 +147,7 @@ memory free low-watermark processor 72107
 !
 !
 !
+username michael privilege 15 password 0 mastro
 !
 redundancy
 !
@@ -188,6 +192,7 @@ interface Loopback0
  ipv6 address 2001:150:3:3::3/128
 !
 interface Tunnel0
+ description DMVPN Tunnel to R5
  ip address 155.1.0.3 255.255.255.0
  no ip redirects
  ip mtu 1400
@@ -211,16 +216,19 @@ interface GigabitEthernet1
  no mop sysid
 !
 interface GigabitEthernet1.13
+ description P2P to R1
  encapsulation dot1Q 13
  ip address 155.1.13.3 255.255.255.0
  ipv6 address 2001:155:1:13::3/64
 !
 interface GigabitEthernet1.23
+ description P2P to R2
  encapsulation dot1Q 23
  ip address 155.1.23.3 255.255.255.0
  ipv6 address 2001:155:1:23::3/64
 !
 interface GigabitEthernet1.37
+ description P2P to R7
  encapsulation dot1Q 37
  ip address 155.1.37.3 255.255.255.0
  ipv6 address 2001:155:1:37::3/64
@@ -263,6 +271,8 @@ ip http server
 ip http authentication local
 ip http secure-server
 !
+ip ssh version 2
+ip scp server enable
 !
 !
 !
@@ -282,7 +292,7 @@ line con 0
  stopbits 1
 line vty 0 4
  privilege level 15
- no login
+ login local
 !
 !
 !
