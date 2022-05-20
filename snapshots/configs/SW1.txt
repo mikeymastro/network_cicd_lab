@@ -21,6 +21,7 @@ interface Ethernet1
    no switchport
 !
 interface Ethernet1.12
+   description P2P to SW2
    encapsulation dot1q vlan 12
    ip address 10.1.12.1/24
 !
