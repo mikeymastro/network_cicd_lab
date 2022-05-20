@@ -1,7 +1,7 @@
 ---
-SW1:
-  hostname: 192.168.69.31
+R1:
+  hostname: 192.168.69.201
   username: michael
   password: mastro
   groups:
-    - eos
+    - ios
