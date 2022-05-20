@@ -1,11 +1,12 @@
-""" Tools script that holds a variety of functions """
+"""Tools script that holds a variety of functions"""
 
 import os
 
 
-def nornir_set_creds(norn, username="michael", password="mastro"):
+def nornir_set_creds(norn, username="test", password=None):
     """
     Handler so credentials are not stored in cleartext.
+    Thank you Kirk!
     """
     if not username:
         username = os.environ.get("USER")
