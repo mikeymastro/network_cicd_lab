@@ -3,13 +3,3 @@ R1:
   hostname: 192.168.69.201
   groups:
     - ios
-
-R2:
-  hostname: 192.168.69.202
-  groups:
-    - ios
-
-R3:
-  hostname: 192.168.69.203
-  groups:
-    - ios
