@@ -240,6 +240,7 @@ ip http authentication local
 ip http secure-server
 !
 ip ssh version 2
+ip ssh server algorithm kex diffie-hellman-group14-sha1
 ip scp server enable
 !
 !
