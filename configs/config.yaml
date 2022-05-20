@@ -2,7 +2,6 @@
 inventory:
   plugin: SimpleInventory
   options:
-    ssl_verify: False
     host_file: "./configs/hosts.yaml"
     group_file: "./configs/groups.yaml"
 runner:
