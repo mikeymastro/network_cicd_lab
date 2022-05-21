@@ -1,5 +1,5 @@
 ---
-SW1:
+R1:
   hostname: 192.168.69.201
   groups:
     - ios
