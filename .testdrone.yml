@@ -4,17 +4,17 @@ name: Testing Python CI/CD
 
 steps:
 - name: Black Code Format Check
-  image: mikeymastro/network_cicd
+  image: magic9669/network_cicd
   commands:
   - black . --check
 
 - name: Batfish Pre-Checks
-  image: mikeymastro/network_cicd
+  image: magic9669/network_cicd
   commands:
   - python3 batfishcheck.py
 
 - name: Precheck Configuration Diff
-  image: mikeymastro/network_cicd
+  image: magic9669/network_cicd
   environment:
     PASSWORD:
       from_secret: PASSWORD
@@ -24,7 +24,7 @@ steps:
   - python build.py --dry_run
 
 - name: Deploy Configurations
-  image: mikeymastro/network_cicd
+  image: magic9669/network_cicd
   environment:
     PASSWORD:
       from_secret: PASSWORD
