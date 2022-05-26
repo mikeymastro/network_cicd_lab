@@ -47,3 +47,21 @@ steps:
   commands:
 #  - pip3 install -r requirements.txt
   - python3 checkip.py
+
+- name: Suzieq Check
+  image: python:3.8
+  commands:
+  - pip install suzieq rich
+  - python test_suzieq.py
+  when:
+    branch:
+    - master
+    - main
+  volumes:
+  - name: suzieq
+    path: /tmp/suz
+
+volumes:
+- name: suzieq
+  host:
+    path: /home/mastro/suz
