@@ -1,8 +1,8 @@
 Building configuration...
 
-Current configuration : 6183 bytes
+Current configuration : 6235 bytes
 !
-! Last configuration change at 17:32:39 UTC Fri May 20 2022 by michael
+! Last configuration change at 14:44:37 UTC Thu May 26 2022 by michael
 !
 version 16.6
 no service timestamps debug uptime
@@ -121,7 +121,10 @@ crypto pki certificate chain SLA-TrustPoint
 !
 license udi pid CSR1000V sn 9K5PDMGQQ96
 diagnostic bootup level minimal
+file prompt quiet
 spanning-tree extend system-id
+archive
+ path flash:napalm_backup
 memory free low-watermark processor 72107
 !
 !
@@ -168,12 +171,10 @@ crypto ipsec profile DMVPN_PROFILE
 !
 !
 interface Loopback0
- description Loopback MGMT
  ip address 150.1.1.1 255.255.255.255
  ipv6 address 2001:150:1:1::1/128
 !
 interface Tunnel0
- description DMVPN Tunnel to R5
  ip address 155.1.0.1 255.255.255.0
  no ip redirects
  ip mtu 1400
@@ -197,7 +198,6 @@ interface GigabitEthernet1
  no mop sysid
 !
 interface GigabitEthernet1.13
- description P2P to R3
  encapsulation dot1Q 13
  ip address 155.1.13.1 255.255.255.0
  ipv6 address 2001:155:1:13::1/64
@@ -208,7 +208,6 @@ interface GigabitEthernet1.100
  ipv6 address 2001:169:254:100::1/64
 !
 interface GigabitEthernet1.146
- description Broadcast to R4/R6
  encapsulation dot1Q 146
  ip address 155.1.146.1 255.255.255.0
  ipv6 address 2001:155:1:146::1/64
