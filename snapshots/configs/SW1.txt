@@ -19,7 +19,6 @@ management api http-commands
    protocol http
    no shutdown
 !
-!
 interface Ethernet1
    no switchport
 !
