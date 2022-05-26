@@ -19,9 +19,6 @@ management api http-commands
    protocol http
    no shutdown
 !
-interface Loopback0
-   ip address 1.1.1.1/32
-!
 interface Ethernet1
    no switchport
 !
