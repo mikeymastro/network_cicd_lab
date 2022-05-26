@@ -1,9 +1,11 @@
 ! Command: show running-config
-! device: SW1 (vEOS-lab, EOS-4.26.6M)
+ ! device: SW1 (vEOS-lab, EOS-4.26.6M)
 !
 ! boot system flash:/vEOS-lab.swi
 !
 no aaa root
+!
+username michael privilege 15 secret sha512 $6$YiTNX3ygXioXfgu2$rlNy5M38gOKji7S4WaOtZdjvVFWzqr6fOSyxiWhZxCS96y1n7KNAlXEb9gy.RPkYmIEFRwKsibR104NPtcd1y/
 !
 transceiver qsfp default-mode 4x10G
 !
