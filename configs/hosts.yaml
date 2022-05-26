@@ -1,5 +1,5 @@
 ---
-R1:
+SW1:
   hostname: 192.168.69.31
   groups:
     - eos
